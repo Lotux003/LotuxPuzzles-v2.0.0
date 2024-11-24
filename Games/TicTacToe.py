@@ -1,11 +1,10 @@
-import turtle as trtl, time
-import random
+import turtle as trtl, time, random
 
 
 # Setup
 wn = trtl.Screen()
 wn.setup(width=1.0, height=1.0)
-wn.bgpic('R.png')
+wn.bgpic('Games/R.png')
 
 circle = trtl.Turtle()
 x = trtl.Turtle()
@@ -146,4 +145,5 @@ wn.onkeypress(Slot2, '2')
 wn.onkeypress(Slot3, '3')
 
 wn.listen()
+
 wn.mainloop()
