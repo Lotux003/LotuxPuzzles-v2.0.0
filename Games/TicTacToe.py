@@ -1,7 +1,6 @@
 import turtle as trtl, time
 import random
 
-time.sleep(99999999999)
 
 # Setup
 wn = trtl.Screen()
