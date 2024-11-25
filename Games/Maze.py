@@ -1,6 +1,7 @@
 import turtle as trtl
 import MazeLib as mm
 
+
 wn = trtl.Screen()
 GridTrtl = trtl.Turtle()
 Runner = trtl.Turtle()
@@ -16,10 +17,25 @@ PathCreator.speed(0)
 PathCreator.left(90)
 PathCreator.hideturtle()
 Solver.hideturtle()
+yertle = trtl.Turtle('turtle')
+yertle.speed('fastest')
+yertle.color('green')
+yertle.turtlesize(.8)
 
-#add a turtle you can draw with in the top left of sreen
+yertle.penup()
+yertle.goto(-((mm._width * 10) - 5), (mm._width * 10) + 5)
+yertle.pendown()
 
+def dragging(x, y):
+    yertle.ondrag(None)
+    yertle.setheading(yertle.towards(x, y))
+    yertle.goto(x, y)
+    yertle.ondrag(dragging)
+
+yertle.ondrag(dragging)
 mm.DrawGrid(GridTrtl, wn)
 mm.Start(Runner, PathCreator, Solver, wn)
-        
+
+
+
 wn.mainloop()
